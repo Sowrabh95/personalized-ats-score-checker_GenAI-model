@@ -1,0 +1,10 @@
+import google.generativeai as genai
+import os
+
+# List Available Models
+available_models = genai.list_models()
+
+# Print Model Names and Supported Methods
+for model in available_models:
+    print(f"Model Name: {model.name}")
+    print(f"Supported Methods: {model.supported_generation_methods}\n")
