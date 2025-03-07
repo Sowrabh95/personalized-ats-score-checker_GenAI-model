@@ -10,7 +10,8 @@ import json
 load_dotenv() 
 
 # get your api key from this website by creating an account https://aistudio.google.com/apikey
-#paste your api key in the .env file
+#paste your api key in the .env file example GOOGLE_API_KEY= sdfjklfsfjffn
+
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 #     Generate a response using the Gemini generative model.
@@ -18,7 +19,7 @@ genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 #     Returns: The generated response text from the Gemini model.
 
 def get_gemini_repsonse(input):
-    model=genai.GenerativeModel('gemini-pro')
+    model=genai.GenerativeModel('gemini-pro') #You may have to look up for the latest models and methods available please check out model_method file
     response=model.generate_content(input)
     return response.text
 
